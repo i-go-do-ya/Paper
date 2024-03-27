@@ -13,6 +13,7 @@
 
 ### 프로젝트 구조  
 *   `docs/`: 논문 리뷰
+    * `Img` : 이미지 폴더
     *  `Computer Vision` : 컴퓨터 비전
         *  `Image Classification` : 이미지 분류
         *  `Object Detection` : 객체 탐지
