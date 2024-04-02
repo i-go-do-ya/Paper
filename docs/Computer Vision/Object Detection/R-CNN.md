@@ -4,7 +4,6 @@
 
 <aside>
 💡 Region-Based Convolutional Neural Networks
-
 </aside>
 
 ## RCNN Paper
@@ -127,13 +126,13 @@
 ---
 
 - **장점**
-    - 동시대의 타 알고리즘 대비 높은 검출 정확도
+    - 전통적인 머신러닝의 한계를 극복하기 위한 convolutional neural networks(CNN) 활용
+    - 부족한 데이터 세트의 한계를 극복하기 위한 ImageNet의 pre-trained 모델 fine-tuning
+    - Region proposal의 속도와 효율성 개선을 위한 기존 방법인 Sliding window 기법 에서 Selective search 기법 적용
+    - 객체 탐지 밀도 향상을 위한 CNN 및 Bounding box regression 적용
 - **단점**
-    - 너무 느린 검출 시간과 복잡한 아키텍처 및 학습 프로세스
-    - 하나의 이미지마다 Selective Search를 수행하여 2,000개의 region 영역 이미지 도출
-    - 개별 이미지별 2,000개씩 생성된 regino  이미지를 CNN Feature map 생성
-    - Selective search, CNN Feature extractor, SVM, Bounding box regressor로 구성되어 있는 프로세스를 거쳐 학습 및 객체 검출이 되어야함
-    - 1장의 이미지를 object detection 하는데 약 50초 소요
+    - 2,000개의 region proposal 영역의 개별 classification & bounding box regression 적용의 이유로 느린 검출 시간 (1장의 이미지의 Object detection 50초 소요)
+    - Selective search, CNN feature extractor, SVM, bounding box regression으로 구성되어 있는 복잡한 프로세스 (End-to-End 학습법이 아님)
 
 ### R-CNN 이후 Object Detection 연구 방향성
 
@@ -142,3 +141,11 @@
 - Deep learning 기반 Object Detection 성능 입증
 - Region Proposal 기반 성능 입증
 - 검출 수행 시간 줄이고 복잡하게 분리된 개별 아키텍처를 통합 할 수 있는 방안 연구 매진
+
+### 추가 질의 설명
+
+---
+
+- **Classifier를 softmax를 사용하지 않고 SVM을 사용하는 이유**
+
+    - Softmax 함수는 다중 클래스 분류 문제에 주로 사용되며, 클래스 간 확률 분포를 출력한다. 하지만, RCNN에서는 대량의 배경 영역이 존재하며, 이러한 배경 영역들은 대부분의 클래스에 속하지 않으므로, 다중 클래스 분류인 softmax 보다 이진 클래스 분류인 SVM을 사용하게 되면, 각 클래스에 대해 독립적으로 이진 분류기를 훈련시킬 수 있으며, 이는 배경 클래스를 더 잘 처리할 수 있다는 결론입니다. 추가적으로 논문 저자는 SVM을 통한 실험 결과의 성능이 높았기 때문에 SVM을 사용하였습니다. 
