@@ -6,9 +6,9 @@
 
 ## RCNN Paper
 
-- **Title :** Region-based Convolutional Networks for Accurate Object Detection and Segmentation
-- **Author :** Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik
-- **Date of Publication :** 25 May 2015
+- **Title :** Rich feature hierarchies for accurate object detection and semantic segmentation
+- **Author :** Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik
+- **Date of Publication :** Submitted on 11 Nov 2013 (v1), last revised 22 Oct 2014 (this version, v5)
 
 ## Reasons for developing RCNN
 
