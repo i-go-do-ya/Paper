@@ -1,22 +1,16 @@
 # R-CNN
 
----
-
 <aside>
 💡 Region-Based Convolutional Neural Networks
 </aside>
 
 ## RCNN Paper
 
----
-
 - **Title :** Region-based Convolutional Networks for Accurate Object Detection and Segmentation
 - **Author :** Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik
 - **Date of Publication :** 25 May 2015
 
 ## Reasons for developing RCNN
-
----
 
 - 전통적인 머신러닝의 한계를 극복하기 위한 딥러닝의 성능 활용 (CNN)
 - 부족한 데이터셋의 한계 극복 (ImageNet pre-trained model fine-tuning)
@@ -25,22 +19,18 @@
 
 ## R-CNN Overview
 
----
-
 ![Untitled](../../Img/RCNN_1.png)
 
 ![Untitled](../../Img/RCNN_2.png)
 
 ## R-CNN Flow
 
----
-
 1. Input image
 2. Region proposals
 3. Compute CNN features
 4. Classify regions
 
-## Region Proposal
+### Region Proposal
 
 ---
 
@@ -67,9 +57,7 @@
   ③ Component 유사도 계산 및 융합 반복
 </details>
 
-
-
-## Feature Extraction
+### Feature Extraction
 
 ---
 
@@ -97,8 +85,6 @@
 ![Untitled](../../Img/RCNN_8.png)
 </details>
 
-
-
 ### Bounding box regression
 
 ---
@@ -115,15 +101,11 @@
 </details>
 
 
-### Result
-
----
+## Result
 
 ![Untitled](../../Img/RCNN_10.png)
 
-### R-CNN 장단점
-
----
+## R-CNN 장단점
 
 - **장점**
     - 전통적인 머신러닝의 한계를 극복하기 위한 convolutional neural networks(CNN) 활용
@@ -134,17 +116,13 @@
     - 2,000개의 region proposal 영역의 개별 classification & bounding box regression 적용의 이유로 느린 검출 시간 (1장의 이미지의 Object detection 50초 소요)
     - Selective search, CNN feature extractor, SVM, bounding box regression으로 구성되어 있는 복잡한 프로세스 (End-to-End 학습법이 아님)
 
-### R-CNN 이후 Object Detection 연구 방향성
-
----
+## R-CNN 이후 Object Detection 연구 방향성
 
 - Deep learning 기반 Object Detection 성능 입증
 - Region Proposal 기반 성능 입증
 - 검출 수행 시간 줄이고 복잡하게 분리된 개별 아키텍처를 통합 할 수 있는 방안 연구 매진
 
-### 추가 질의 설명
-
----
+## 추가 질의 설명
 
 - **Classifier를 softmax를 사용하지 않고 SVM을 사용하는 이유**
 
